@@ -8,10 +8,31 @@ int main(){
     r1LEDs=0;
     r2LEDs=0;
     while(1){
-        if (myButtons[0].read() == 1) r1LEDs = r1LEDs|0x07;
-        else r1LEDs = r1LEDs&0x38;
-        if (myButtons[1].read() == 1) r2LEDs = r2LEDs|0x07;
-        else r2LEDs = r2LEDs&0x38;
+        r1LEDs = r1LEDs|0x0c;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x0c;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x0c;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x14;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x24;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x26;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x21;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x21;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x21;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x22;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x24;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x34;
+        wait_ms(100);
+        r1LEDs = r1LEDs|0x0c;
         wait_ms(100);
     }
 }
