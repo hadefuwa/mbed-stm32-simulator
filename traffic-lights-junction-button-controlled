@@ -11,6 +11,12 @@ int main(){
         if (myButtons[1].read() == 1)
         {
             //seq a1r2 > r1r2 > r1r2a2 > r1g2
+            myLEDs = myLEDs|0x0a; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x09; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x19; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x21; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x21; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x21; wait_ms(1000); myLEDs=0;
             stateVar = false;
         }
         else if (stateVar == true)
@@ -22,6 +28,10 @@ int main(){
         else if (stateVar == false && myButtons[0].read() == 1)
         {
             //seq r2a2 > r1r2 > r1a1r2 > g1r2
+            myLEDs = myLEDs|0x11; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x09; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x0b; wait_ms(1000); myLEDs=0;
+            myLEDs = myLEDs|0x06; wait_ms(1000); myLEDs=0;
             stateVar = true;
         }
 
@@ -30,20 +40,7 @@ int main(){
             //r1g2
             myLEDs = myLEDs|0x21; wait_ms(1000); myLEDs=0;
         }
-        
-        myLEDs = myLEDs|0x0c; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x0c; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x0c; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x0a; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x09; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x19; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x21; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x21; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x21; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x11; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x09; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x0b; wait_ms(1000); myLEDs=0;
-        myLEDs = myLEDs|0x06; wait_ms(1000); myLEDs=0;
+
     }
 }
 
