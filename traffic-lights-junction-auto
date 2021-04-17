@@ -44,5 +44,6 @@ int main(){
         myLEDs=0;
         myLEDs = myLEDs|0x0c;
         wait_ms(1000);
+        myLEDs=0;
     }
 }
