@@ -1,0 +1,18 @@
+#include "mbed.h"
+
+DigitalIn myButtons[] = {(p11),(p12)};
+BusOut r1LEDs (p5,p6,p7);
+BusOut r2LEDs (p8,p9,p10);
+
+int main(){
+    r1LEDs=0;
+    r2LEDs=0;
+    while(1){
+        if (myButtons[0].read() == 1) r1LEDs = r1LEDs|0x07;
+        else r1LEDs = r1LEDs&0x38;
+        if (myButtons[1].read() == 1) r2LEDs = r2LEDs|0x07;
+        else r2LEDs = r2LEDs&0x38;
+        wait_ms(100);
+    }
+}
+
