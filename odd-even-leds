@@ -1,0 +1,18 @@
+#include "mbed.h"
+
+DigitalIn mySwitches[] = {(p11),(p12)};
+BusOut oddLEDs (p5,p7,p9);
+BusOut evenLEDs (p6,p8,p10);
+
+int main(){
+    oddLEDs=0;
+    evenLEDs=0;
+    while(1){
+        if (mySwitches[0].read() == 1) oddLEDs = oddLEDs|0x07;
+        else oddLEDs = oddLEDs&0x38;
+        if (mySwitches[1].read() == 1) evenLEDs = evenLEDs|0x07;
+        else evenLEDs = evenLEDs&0x38;
+        wait_ms(100);
+    }
+}
+
